@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #333;
+}
+
+
+/* HEADER STYLES */
+header {
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.header-logo img {
+    height: 60px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav ul li {
+    display: block;
+    height: 50px;
+}
+
+.nav-link, .profile-button {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    margin-left: 30px;
+    height: 100%;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.profile-button .MuiSvgIcon-root {
+    font-size: 3rem;
+}
+
+.nav-link:hover, .profile-button:hover {
+    transform: scale(1.05);
+}
+
+.header-icon {
+    height: 40px;
+}
+
+
+/* SUBNAV STYLES */
+header .profile-button {
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.subnav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    background-color: #333;
+    box-shadow: 1px 1px 5px black;
+    border-bottom-left-radius: 8px;
+
+    padding: 30px 0 30px 0;
+    right: 0;
+    top: 0;
+    z-index: 200;
+}
+
+.subnav-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    padding: 20px;
+    min-width: 300px;
+}
+
+.subnav-header h2 {
+    color: white;
+}
+
+.subnav-header .profile-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 40px;
+    background-color: #ef6c00;
+    color: white;
+}
+
+.subnav h5 {
+    color: #666;
+}
+
+.subnav ul {
+    width: 100%;
+}
+
+.subnav li {
+    list-style: none;
+    text-align: right;
+    display: block;
+}
+
+.subnav li:hover {
+    background-color: #555;
+}
+
+.subnav li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 10px 0 10px 0;
+
+
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.subnav li a.logout {
+    color: #ef6c00;
+}
+
+.subnav li button {
+    background: none;
+    border: none;
+    height: 100%;
+}
+
+.subnav-login {
+    text-decoration: none;
+    color: #ef6c00;
+    padding: 0 5px 0 5px;
+    cursor: pointer;
+}
+
+.subnav .close-button, .subnav-header h1, .subnav li a {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+
+/* LOGOUT + LOGIN PAGE STYLES */
+#logout, #login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.logout-container, .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 70vh;
+    width: 70vw;
+}
+
+#logout img, #login img {
+    width: 400px;
+}
+
+#logout h1, #logout h2, #login h2 {
+    color:#ef6c00;
+}
+
+#login h1, #logout h3, #login h3 {
+    color: white;
+}
+
+#logout a, #login a {
+    text-decoration: none;
+}
+
+
+/* MISC */
+.post-time {
+    padding: 10px;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.black {
+    color: black;
+}
+
+.username, .orange {
+    color: #ef6c00;
+}
+
+.white {
+    color: white;
+}
+
+
+/* MOBILE MEDIA QUERIES */
+@media screen and (max-width: 500px) {
+    #logout, #login {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    #logout img, #login img {
+        width: 90vw;
+    }
+
+    .subnav {
+        width: 100vw;
+        font-size: 1.2rem;
+    }
+
+    .subnav ul {
+        margin-top: 30px;
+    }
+
+    .subnav li {
+        height: 80px;
+    }
+
+    .subnav ul button {
+        width: 100vw;
+        text-align: right;
+    }
+
+    .subnav li a {
+        font-size: 1.8rem;
+    }
+}

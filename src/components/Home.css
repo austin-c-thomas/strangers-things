@@ -1,0 +1,144 @@
+#home {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    background-color: #ef6c00;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+}
+
+/* LOGIN SLIDER */
+.register, .login {
+    width: 70%;
+}
+.login-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100%;
+    background-color: #333;
+    box-shadow: 1px 1px 5px black;
+    animation: slideInLeft;
+    animation-duration: 0.3s;
+}
+
+@keyframes slideInLeft {
+    from {left: -1000px}
+    to {left: 0}
+}
+
+.login-slide h2 {
+    margin-bottom: 20px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50%;
+}
+
+.intro img {
+    width: 40vw;
+    max-width: 500px;
+}
+
+.intro .vertical-button-container, .login-form .vertical-button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.login-form .MuiFormLabel-root {
+    color: #ef6c00;
+}
+
+.login-form .MuiInputBase-root {
+    color: #ef6c00;
+}
+
+
+/* ARTWORK + MARKETPLACE CTA SECTION */
+.artwork-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.artwork-container img {
+    width: 95%;
+    margin-bottom: 20px;
+}
+
+.artwork-container button {
+    margin-top: 20px;
+}
+
+.artwork-container a {
+    text-decoration: none;
+}
+
+
+/* MOBILE MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+    #home {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+    }
+
+    .login-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        z-index: 50;
+    }
+
+    .artwork-container {
+       overflow-y: visible;
+       position: relative;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 60%;
+    }
+
+    .intro img {
+        width: 60vw;
+        margin-bottom: 30px;
+    }
+
+    .intro .vertical-button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .artwork-container {
+        height: 100%;
+        padding: 50px 0 50px 0;
+    }
+}
