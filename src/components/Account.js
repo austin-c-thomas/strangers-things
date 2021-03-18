@@ -107,12 +107,24 @@ const UserPosts = ({myPosts, getPostDate}) => {
     );
 };
 
+
+
+
 const UserMessages = ({messages, userData, posts}) => {
     const history = useHistory();
     const [messageBox, setMessageBox] = useState('inbox');
     const inboxMessages = messages.filter((message) => message.fromUser._id !== userData._id);
     const sentMessages = messages.filter((message) => message.fromUser._id === userData._id);
 
+    const findAuthor = (message) => {
+        const targetPost = posts.find((thisPost) => {return (thisPost._id === message.post._id )});
+        if (targetPost) {
+            return targetPost.author.username;
+        } else {
+            return "Unknown"
+        };
+    };
+    
     return (
         <section className="user-messages">
             <div className="section-header"><h1>Messageboard</h1></div>
@@ -165,14 +177,18 @@ const UserMessages = ({messages, userData, posts}) => {
                 })
 
                 : messageBox === 'sent' && sentMessages.length >= 1
-                ? sentMessages.map((message) => {
+
+                ? 
+
+                sentMessages.map((message) => {
+
                     return (
                         <div 
                             className="message"
                             key={message._id}>
 
                             <div className="message-header">
-                                <h3>To: <span className="username">{posts.find((thisPost) => {return (thisPost._id === message.post._id )}).author.username}</span></h3>
+                                <h3>To: <span className="username">{findAuthor(message)}</span></h3>
                             </div>
 
                             <div className="message-content">
@@ -182,6 +198,7 @@ const UserMessages = ({messages, userData, posts}) => {
                                     <Button 
                                         variant="contained" 
                                         color="primary"
+                                        disabled={posts.find((thisPost) => {return (thisPost._id === message.post._id )}) ? false : true}
                                         onClick={() => {
                                             history.push(`/marketplace/${message.post._id}`)
                                         }}>View Post</Button>

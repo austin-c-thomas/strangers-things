@@ -19,7 +19,7 @@ import {
     Account} from './components';
 
 // MUI IMPORTS & THEMES
-import {makeStyles, ThemeProvider, createMuiTheme, withTheme} from '@material-ui/core/styles';
+import {makeStyles, ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import {orange, grey} from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({

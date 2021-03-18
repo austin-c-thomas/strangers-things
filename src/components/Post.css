@@ -99,6 +99,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-gap: 8px;
+    background-color: rgb(235, 235, 235);
 }
 
 .my-message-list {
@@ -108,7 +109,7 @@
     grid-gap: 8px;
     padding: 8px;
 
-    max-height: 450px;
+    max-height: 65vh;
     min-height: 200px;
     overflow-y: scroll;
     -ms-overflow-style: none;
@@ -118,6 +119,7 @@
 .my-messages-container .message {
     box-shadow: 1px 1px 5px black;
     border-radius: 8px;
+    background-color: white;
 }
 
 
